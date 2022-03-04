@@ -1,6 +1,7 @@
 import Profile from "../../components/Profile/Profile";
 import Feed from "../../components/Feed/Feed";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar"
+
 import Appbar from "../../components/Appbar/Appbar";
 import "./profilelayout.css";
 import { useState } from "react";
@@ -22,7 +23,7 @@ const ProfileLayout = () => {
           sidebar ? "profilelayout_sidebar open" : "profilelayout_sidebar"
         }
       >
-        <Sidebar />
+        
       </div>
       {/* content */}
       <div className="profilelayout_content">
@@ -33,8 +34,11 @@ const ProfileLayout = () => {
         {/* profile */}
         <div className="profilelayout_content-profile">
           <Profile />
+          <div className="sidee">
+         <Sidebar />
         </div>
       </div>
+    </div>
     </div>
   );
 };

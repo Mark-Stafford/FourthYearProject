@@ -6,7 +6,11 @@ import ResetLayout from "./Layouts/ResetLayout/ResetLayout";
 import { AuthContext } from "./context/AuthContext";
 import { useContext, useEffect } from "react";
 import axios from "axios";
-import Accommodation from './components/pages/Accommodation';
+import Accommodation from './Layouts/AccommodationLayout/AccommodationLayout';
+import Prague from './Layouts/PragueLayout/PragueLayout';
+import Amsterdam from './Layouts/AmsterdamLayout/AmsterdamLayout';
+import SearchPage from './Layouts/PragueLayout/SearchPage'
+
 
 function App() {
   const { dispatch, token, isLoggedIn } = useContext(AuthContext);
@@ -61,6 +65,18 @@ function App() {
           
           <Route path='/accommodation' 
           component={Accommodation} />
+
+<Route path='/amsterdam' 
+          component={Amsterdam} />
+
+<Route path='/prague' 
+          component={Prague} />
+
+           <Route path="/search">
+            <SearchPage />
+          </Route>
+
+
           
         
         

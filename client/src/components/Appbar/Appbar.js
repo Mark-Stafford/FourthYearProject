@@ -2,15 +2,30 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import Avatar from "../Avatar/Avatar";
 import "./appbar.css";
 import { Link } from 'react-router-dom';
+import { BiLogOut } from "react-icons/bi";
+import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 
 const Appbar = ({ handleSidebar }) => {
+  const { dispatch } = useContext(AuthContext);
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.get("/api/auth/signout");
+      localStorage.removeItem("_appSignging");
+      dispatch({ type: "SIGNOUT" });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="appbar">
       <div className="appbar_wrapper">
         {/* logo */}
         <div className="appbar_logo">
-          <img src="./assets/img/shuttle.svg" alt="logo" />
+          
           <p>UniAccomm</p>
           <li className='nav-item'>
               <Link to='/' className='nav-links'>
@@ -27,10 +42,14 @@ const Appbar = ({ handleSidebar }) => {
                 Accommodation
               </Link>
             </li>
+  
+            
         </div>
         {/* avatar */}
         <div className="appbar_avatar">
+          <p></p>
           <Avatar />
+          
           <BiMenuAltLeft onClick={handleSidebar} />
         </div>
       </div>

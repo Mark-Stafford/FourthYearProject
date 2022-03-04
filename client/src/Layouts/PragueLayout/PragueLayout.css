@@ -1,0 +1,31 @@
+body {
+    
+     
+       padding-top: 35px; 
+       zoom: 100%;
+   
+   }
+   
+   .profilelayout3 {
+     
+     
+     background: white;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     overflow: hidden;
+    
+   }
+   
+   .new 
+   {
+     zoom :200%;
+     position:absolute;
+     padding-left: 100px;
+   }
+   .content {
+     padding-left: 100px;
+   }
+ 
+   
+  

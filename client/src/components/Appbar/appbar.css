@@ -9,9 +9,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(84, 79, 95, 0.8);
-  -webkit-backdrop-filter: saturate(80%) blur(20px);
-          backdrop-filter: saturate(80%) blur(20px);
+  background-color: black;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   z-index: 2;
 }
 
@@ -69,5 +69,19 @@
   .appbar_avatar svg {
     display: none;
   }
+}
+
+.nav-item {
+  height: 80px;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+  padding: 0.5rem 1rem;
+  height: 40%;
 }
 /*# sourceMappingURL=appbar.css.map */

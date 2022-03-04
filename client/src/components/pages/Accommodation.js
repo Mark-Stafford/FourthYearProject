@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-import Feed from "../Feed/Feed";
-import Sidebar from "../Sidebar/Sidebar";
+
 import Appbar from "../Appbar/Appbar";
 import { useState } from "react";
 
@@ -18,24 +17,31 @@ const Accommodation = () => {
       <div className="profilelayout">
         {/* appbar */}
         <Appbar handleSidebar={handleSidebar} />
-        {/* sidebar */}
-        <div
-          className={
-            sidebar ? "profilelayout_sidebar open" : "profilelayout_sidebar"
-          }
-        >
-          <Sidebar />
-        </div>
-        {/* content */}
-        <div className="profilelayout_content">
-          {/* feed */}
-          <div className="profilelayout_content-feed">
-            <Feed />
-          </div>
-          {/* profile */}
+       
+        
          
+          
+        
+        
+        
+         
+        
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
+          rerum blanditiis a quibusdam? Dolorum labore praesentium eius tenetur
+          inventore corrupti distinctio assumenda accusantium, officia
+          consequatur?
+        </p>
+
+           <p> hello welcome to Accommodation</p>
+         
+        <div>
         </div>
-      </div>
+        </div>
+      
+      
+
+      
     );
   };
   

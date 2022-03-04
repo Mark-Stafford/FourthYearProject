@@ -25,12 +25,7 @@ const Sidebar = () => {
       <div className="sidebar_menu">
         <ul>
           <li>
-            <BiBookContent />
-            <p>feed</p>
-          </li>
-          <li>
-            <BiUserCircle />
-            <p>profile</p>
+         
           </li>
           <li onClick={handleClick}>
             <BiLogOut />
