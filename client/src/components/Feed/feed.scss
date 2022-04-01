@@ -9,6 +9,7 @@
   p {
     font-weight: 300;
     color: $purple-lighter;
+    
   }
   &_date {
     display: flex;
@@ -31,5 +32,9 @@
     p {
       font-size: 0.8rem;
     }
+  }
+
+  p.text{
+    font-size: 150%;
   }
 }

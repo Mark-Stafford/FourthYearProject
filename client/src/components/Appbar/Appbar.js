@@ -20,6 +20,17 @@ const Appbar = ({ handleSidebar }) => {
       console.log(err);
     }
   };
+
+  const handleClick2 = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.get("/api/auth/signout");
+      localStorage.removeItem("_appSignging");
+      dispatch({ type: "SIGNOUT" });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="appbar">
       <div className="appbar_wrapper">
@@ -33,23 +44,25 @@ const Appbar = ({ handleSidebar }) => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/' className='nav-links'>
-                Contact Us
+              <Link to='/report' className='nav-links'>
+                Add
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/accommodation' className='nav-links'>
                 Accommodation
               </Link>
-            </li>
-  
+              </li>
+
+              
             
         </div>
         {/* avatar */}
         <div className="appbar_avatar">
-          <p></p>
-          <Avatar />
-          
+        <li className='nav-item' onClick={handleClick2}>
+
+          <Avatar onClick={handleClick2} />
+          </li>
           <BiMenuAltLeft onClick={handleSidebar} />
         </div>
       </div>

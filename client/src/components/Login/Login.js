@@ -45,8 +45,12 @@ const Login = () => {
         bodyClassName: "toast-failed",
       });
     try {
-      await axios.post("/api/auth/signing", { email, password });
+      const response = await axios.post("/api/auth/signing", { email, password });
+      console.log(await response)
+      localStorage.setItem("currentUser", response.data.user._id)    
       localStorage.setItem("_appSignging", true);
+      
+      
       dispatch({ type: "SIGNING" });
     } catch (err) {
       toast(err.response.data.msg, {
@@ -59,7 +63,9 @@ const Login = () => {
   const googleSuccess = async (res) => {
     const token = res?.tokenId;
     try {
-      await axios.post("/api/auth/google_signing", { tokenId: token });
+      const response = await axios.post("/api/auth/google_signing", { tokenId: token }); 
+      console.log(await response)
+      
       localStorage.setItem("_appSignging", true);
       dispatch({ type: "SIGNING" });
     } catch (err) {

@@ -9,6 +9,11 @@
 .feed p {
   font-weight: 300;
   color: #99979e;
+  
+}
+
+p.text{
+  font-size: 150%;
 }
 
 .feed_date {

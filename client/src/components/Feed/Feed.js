@@ -15,12 +15,10 @@ const Feed = () => {
       </div>
       {/* content */}
       <div className="feed_content">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
-          rerum blanditiis a quibusdam? Dolorum labore praesentium eius tenetur
-          inventore corrupti distinctio assumenda accusantium, officia
-          consequatur?
-        </p>
+        <h2>
+          Welcome to your home page edit your profile
+          
+        </h2>
       </div>
     </div>
   );

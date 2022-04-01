@@ -22,7 +22,7 @@ function Banner() {
                 <h5>
                    
                 </h5>
-                <Button onClick={() => history.push('/search')} variant='outlined'>See Available Options</Button>
+                <Button onClick={() => history.push('/search')} variant='outlined'>Choose Your College </Button>
             </div>
         </div>
     )

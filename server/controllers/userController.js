@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
+const cors = require('cors');
+
 
 const userController = {
   register: async (req, res) => {
@@ -108,11 +110,11 @@ const userController = {
       res.cookie("_apprftoken", rf_token, {
         httpOnly: true,
         path: "/api/auth/access",
-        maxAage: 24 * 60 * 60 * 1000, // 24h
+        maxAge: 24 * 60 * 60 * 1000, // 24h
       });
 
       // signing success
-      res.status(200).json({ msg: "Signing success" });
+      res.status(200).json({ msg: "Signing success", user });
     } catch (err) {
       res.status(500).json({ msg: err.message });
     }
@@ -197,10 +199,10 @@ const userController = {
   update: async (req, res) => {
     try {
       // get info
-      const { name, avatar } = req.body;
+      const { name } = req.body;
 
       // update
-      await User.findOneAndUpdate({ _id: req.user.id }, { name, avatar });
+      await User.findOneAndUpdate({ _id: req.user.id }, { name });
       // success
       res.status(200).json({ msg: "Update success." });
     } catch (err) {
@@ -258,7 +260,7 @@ const userController = {
           name,
           email,
           password: hashPassword,
-          avatar: picture,
+          imagerep: picture,
         });
         await newUser.save();
         // sign in the user

@@ -21,4 +21,4 @@ let upload = multer({
   fileFilter: filerFilter,
 });
 
-module.exports = upload.single("avatar");
+module.exports = upload.single("imagerep");

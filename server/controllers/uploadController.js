@@ -7,7 +7,7 @@ cloudinary.config({
 });
 
 const uploadController = {
-  uploadAvar: async (req, res) => {
+  uploadImg: async (req, res) => {
     try {
       // get file
       const file = req.file;
@@ -16,7 +16,7 @@ const uploadController = {
       cloudinary.v2.uploader.upload(
         file.path,
         {
-          folder: "avatar",
+          folder: "imagerep",
           width: 150,
           height: 150,
           crop: "fill",
