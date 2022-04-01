@@ -12,22 +12,22 @@ const users = require("../models/userSchema");
 
 router.post("/register",async(req,res)=>{
     // console.log(req.body);
-    const {name,email,age,mobile,work,add,desc} = req.body;
+    const {city} = req.body;
 
-    if(!name || !email || !age || !mobile || !work || !add || !desc){
+    if(!city){
         res.status(422).json("plz fill the data");
     }
 
     try {
         
-        const preuser = await users.findOne({email:email});
+        const preuser = await users.findOne({city:city});
         console.log(preuser);
 
         if(preuser){
             res.status(422).json("this is user is already present");
         }else{
             const adduser = new users({
-                name,email,age,mobile,work,add,desc
+                city
             });
 
             await adduser.save();

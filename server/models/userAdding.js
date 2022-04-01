@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 
-const reportSchema = new Schema({
+const addingSchema = new Schema({
     description: {type:String, required:true},
     imagerep: {
         type: String,
@@ -18,8 +18,8 @@ const reportSchema = new Schema({
 
 
 
-const Report = model('Report', reportSchema);
+const Adding = model('Adding', addingSchema);
 
 
 
-module.exports = Report;
+module.exports = Adding;

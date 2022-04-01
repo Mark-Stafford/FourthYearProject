@@ -2,7 +2,7 @@ const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
-const routesHandler = require('./routes/reportRoutes');
+const routesHandler = require('./routes/addingRoutes');
 const express = require("express");
 const app = express();
 require('dotenv/config');

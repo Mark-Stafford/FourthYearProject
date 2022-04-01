@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css';
-import './problems.css';
+import './Houses.css';
 import axios from "axios";
 import { toast } from "react-toastify";
 import Appbar from '../../components/Appbar/Appbar';
 
 
-const Problems = (props) => {
+const Houses = (props) => {
   useEffect( () => {
       fetchItems();
   }, []);
@@ -23,7 +23,7 @@ const Problems = (props) => {
     e.preventDefault();
     // check field
   
-      const res = await axios.post("/reports/delete", {
+      const res = await axios.post("/houses/delete", {
 
         
         
@@ -38,14 +38,14 @@ const Problems = (props) => {
     const deleteTodo = async (e, id) => {
       try {
         e.stopPropagation();
-        await axios.post("/reports/delete");
+        await axios.post("/houses/delete");
         setItems(items.filter(({ _id: i }) => id !== i));
       } catch (err) {}
     };
 
 
   const fetchItems = async () => {
-      const data = await fetch('/reports');
+      const data = await fetch('/addings');
       const items = await data.json();
       setItems(items);
   };
@@ -55,8 +55,11 @@ const Problems = (props) => {
   return (
     
     <>
+     <div className="profilelayout888">
 <Appbar />
 
+<br></br>
+<br></br>
 
     <div align="center">
       <div className="tble123">
@@ -68,7 +71,7 @@ const Problems = (props) => {
         <th>User ID</th>
 
           <th>Description</th>
-          <th>City / rooms</th>
+          <th>City </th>
           <th>Image</th>
 
         </tr>
@@ -79,8 +82,9 @@ const Problems = (props) => {
         <tr>
 
         <td>{item.user}</td>
+        <br></br>
         <td>{item.description}</td>
-          <td>{item.latitude} , {item.longitude} </td>
+          <td>{item.city} </td>
           <td><a href={item.imagerep} target="_parent">
         <button
           className='butns1'
@@ -102,10 +106,10 @@ const Problems = (props) => {
                 </div>
                 </div>
 
-
+</div>
   </>
   )
 }
 
-export default Problems;
+export default Houses;
 

@@ -44,7 +44,7 @@ const Appbar = ({ handleSidebar }) => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/report' className='nav-links'>
+              <Link to='/adding' className='nav-links'>
                 Add
               </Link>
             </li>

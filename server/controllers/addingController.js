@@ -1,17 +1,16 @@
 
-const Report = require("../models/userReport");
+const Adding = require("../models/userAdding");
 const User = require("../models/userModel");
 
 
-const reportController = {
-  report: async (req, res) => {
+const addingController = {
+  adding: async (req, res) => {
 
         const userDescription = req.body.description;
         const userImagerep = req.body.imagerep;
         const userCity = req.body.city;
-        const userCountry = req.body.country;
-        const userRoom = req.body.rooms;
-        const userAccomm = req.body.accommodationtype
+        const userRooms = req.body.rooms;
+      
         const user = req.body.user;
 
       // const rf_token = createToken.access({ id: user._id });
@@ -21,13 +20,11 @@ const reportController = {
       //   maxAge: 24 * 60 * 60 * 1000, // 24h
       // });
         
-        const newReport = new Report({
+        const newAdding = new Adding({
           description: userDescription,
           imagerep: userImagerep,
           city : userCity,
-          country: userCountry,
-          numberofrooms: userRoom,
-          accommodationtype: userAccomm,
+          rooms: userRooms,
           user : user
         
           
@@ -35,11 +32,11 @@ const reportController = {
 
 
 
-        console.log(newReport);
+        console.log(newAdding);
 
         
         try {
-            await newReport.save( (err, newReportResults) => {
+            await newAdding.save( (err, newAddingResults) => {
                 if (err) res.end('Error Saving.');
                 res.redirect('/problems');
                 res.end();
@@ -55,12 +52,12 @@ const reportController = {
 
   
 
-  reportinfo: async (req, res) => {
+  addinginfo: async (req, res) => {
 
-    const userReports = await Report.find({},  (err, reportData) => {
+    const userAddings = await Adding.find({},  (err, addingData) => {
         if (err) throw err;
-        if (reportData) {
-            res.end(JSON.stringify(reportData));
+        if (addingData) {
+            res.end(JSON.stringify(addingData));
         } else {
             res.end();
         }
@@ -68,4 +65,4 @@ const reportController = {
   },
 }
 
-module.exports = reportController;
+module.exports = addingController;

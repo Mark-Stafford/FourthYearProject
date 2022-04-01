@@ -10,8 +10,8 @@ import Accommodation from './Layouts/AccommodationLayout/AccommodationLayout';
 import Prague from './Layouts/PragueLayout/PragueLayout';
 import Amsterdam from './Layouts/AmsterdamLayout/AmsterdamLayout';
 import SearchPage from './Layouts/PragueLayout/SearchPage';
-import Report from './Layouts/Report';
-import Problem from './Layouts/Problems/Problems';
+import Adding from './Layouts/Adding';
+import Houses from './Layouts/Housing/Houses';
 import Map from './Layouts/geolocated';
 import praguecollege from "./Layouts/PragueLayout/praguecollege";
 import valencia from "./Layouts/PragueLayout/valencia";
@@ -59,9 +59,9 @@ function App() {
       <Switch>
       <Route path='/maps' component={isLoggedIn ? Map : AuthLayout} />
 
-      <Route path='/report' exact component={Report} />
-      <Route path='/problems' component={Problem} />
-        <Route path="/p" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
+      <Route path='/adding' exact component={Adding} />
+      <Route path='/houses' component={Houses} />
+        <Route path="/" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
         />
         <Route
           path="/auth/reset-password/:token"
@@ -97,7 +97,7 @@ function App() {
           
           <Route path="/amsterdamcollege" 
            component={isLoggedIn ? amsterdamcollege: AuthLayout}/>
-<Route exact path="/" component={Home} />
+<Route exact path="/p" component={Home} />
       <Route exact path="/reg" component={Register} />
       <Route exact path="/edit/:id" component={Edit} />
       <Route exact path="/view/:id" component={Details} />

@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../components/Input2/Input2";
 import Appbar from '../components/Appbar/Appbar';
-import Map from '../Layouts/geolocated';
+import Map from './geolocated';
 
 
 
@@ -21,7 +21,7 @@ const initialState = {
     
   };
 
-function Report() {
+function Adding() {
     const [visible, setVisible] = useState(false);
     const [data, setData] = useState(initialState);
     const loca = useContext(Map);
@@ -58,7 +58,7 @@ function Report() {
      
 
       try {
-        const res = await axios.post("/addReport", {
+        const res = await axios.post("/addAdding", {
           imagerep,
           description,
           city,
@@ -178,4 +178,4 @@ function Report() {
     );
   };
 
-export default Report;
+export default Adding;
