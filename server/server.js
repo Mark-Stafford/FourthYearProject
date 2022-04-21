@@ -6,7 +6,6 @@ const routesHandler = require('./routes/addingRoutes');
 const express = require("express");
 const app = express();
 const path = require('path');
-
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -15,6 +14,7 @@ const users = require("./models/userSchema");
 const articlesRouter = require("./routes/articles");
 const usersRouter = require('./routes/users');
 require('dotenv').config();
+
 
 // db
 app.listen(process.env.PORT || 3000, function(){
@@ -32,17 +32,11 @@ app.use(cors());
 //hello h
 
 
-app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(index);
-});
-
-
-
+const path = require('path');
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
+  app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,  "app/client/build", "index.html"));
+    res.sendFile(path.resolve(__dirname,  "client/build", "index.html"));
   });
 }
 
