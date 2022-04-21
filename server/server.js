@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const routesHandler = require('./routes/addingRoutes');
 const express = require("express");
 const app = express();
-const path = require('path');
+
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
