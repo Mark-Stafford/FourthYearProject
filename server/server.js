@@ -11,6 +11,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const router = require("./routes/router");
 const users = require("./models/userSchema");
+const articlesRouter = require("./routes/articles");
 const usersRouter = require('./routes/users');
 
 
@@ -52,28 +53,13 @@ app.use('/users', usersRouter);
 
 
 
+app.use("/articles", articlesRouter);
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(cors());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

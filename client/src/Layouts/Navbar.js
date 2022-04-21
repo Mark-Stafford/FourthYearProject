@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../../80-20CODING-logo.png";
+
 
 const Navbar = () => {
   return (
     <NavbarContainer>
       <nav className="navbar navbar-expand-lg navbar-light px-5 py-0">
         <Link className="navbar-brand" to="#">
-          <img style={{ width: "50px" }} src={logo} alt="logo" />
+          <img style={{ width: "50px" }}  alt="logo" />
         </Link>
         <button
           className="navbar-toggler"

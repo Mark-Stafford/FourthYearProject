@@ -38,7 +38,7 @@ const addingController = {
         try {
             await newAdding.save( (err, newAddingResults) => {
                 if (err) res.end('Error Saving.');
-                res.redirect('/problems');
+                res.redirect('/houses');
                 res.end();
             });
     

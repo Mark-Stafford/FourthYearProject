@@ -22,11 +22,27 @@ import Register from './components/Register';
 import Edit from './components/Edit';
 import Details from './components/Details';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./Layouts/Header";
+import Navbar from "./Layouts/Navbar";
+import Footer from "./Layouts/Footer";
+import Articles from "./components/Articles";
+import AddArticle from "./components/AddArticle";
+import EditArticle from "./components/EditArticle";
+import Article from "./components/Article";
+
 
 
 
 function App() {
   const { dispatch, token, isLoggedIn } = useContext(AuthContext);
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/articles")
+      .then(res => setPosts(res.data))
+      .catch(error => console.log(error));
+  }, []);
   
   // get ac token
   useEffect(() => {
@@ -54,6 +70,8 @@ function App() {
     }
   }, [dispatch, token]);
 
+
+
   return (
     <Router>
       <Switch>
@@ -61,7 +79,7 @@ function App() {
 
       <Route path='/adding' exact component={Adding} />
       <Route path='/houses' component={Houses} />
-        <Route path="/" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
+        <Route path="/p" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
         />
         <Route
           path="/auth/reset-password/:token"
@@ -73,7 +91,19 @@ function App() {
           exact
           component={ActivateLayout}
         />
-        
+           
+      
+      <Route exact path="/pp" render={() => <Articles posts={posts} />} />
+      <Route
+        path="/article/:id"
+        render={props => <Article {...props} posts={posts} />}
+      />
+      <Route
+        path="/update/:id"
+        render={props => <EditArticle {...props} posts={posts} />}
+      />
+      <Route path="/add-article" component={AddArticle} />
+      <Footer />
         
         
           
@@ -97,7 +127,7 @@ function App() {
           
           <Route path="/amsterdamcollege" 
            component={isLoggedIn ? amsterdamcollege: AuthLayout}/>
-<Route exact path="/p" component={Home} />
+<Route exact path="/" component={Home} />
       <Route exact path="/reg" component={Register} />
       <Route exact path="/edit/:id" component={Edit} />
       <Route exact path="/view/:id" component={Details} />

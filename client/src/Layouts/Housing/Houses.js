@@ -85,7 +85,9 @@ const Houses = (props) => {
         <br></br>
         <td>{item.description}</td>
           <td>{item.city} </td>
+          
           <td><a href={item.imagerep} target="_parent">
+        
         <button
           className='butns1'
           buttonStyle='butn--primary'
