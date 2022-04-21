@@ -29,6 +29,12 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(cors());
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+  });
+}
 
 // routes
 app.use(userRoutes);
