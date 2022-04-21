@@ -79,7 +79,7 @@ function App() {
 
       <Route path='/adding' exact component={Adding} />
       <Route path='/houses' component={Houses} />
-        <Route path="/p" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
+        <Route path="/" exact component={isLoggedIn ? ProfileLayout : AuthLayout}
         />
         <Route
           path="/auth/reset-password/:token"
@@ -127,7 +127,7 @@ function App() {
           
           <Route path="/amsterdamcollege" 
            component={isLoggedIn ? amsterdamcollege: AuthLayout}/>
-<Route exact path="/" component={Home} />
+<Route exact path="/p" component={Home} />
       <Route exact path="/reg" component={Register} />
       <Route exact path="/edit/:id" component={Edit} />
       <Route exact path="/view/:id" component={Details} />
