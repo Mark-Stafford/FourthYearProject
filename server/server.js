@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const routesHandler = require('./routes/addingRoutes');
 const express = require("express");
 const app = express();
-require('dotenv/config');
+
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -13,7 +13,7 @@ const router = require("./routes/router");
 const users = require("./models/userSchema");
 const articlesRouter = require("./routes/articles");
 const usersRouter = require('./routes/users');
-
+require('dotenv').config();
 
 // db
 mongoose.connect(
