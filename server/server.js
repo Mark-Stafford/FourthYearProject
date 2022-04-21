@@ -24,15 +24,8 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-  (err) => {
-    if (err) throw err;
-    console.log("db connected");
-
-    const PORT = 8000;
-    app.listen(PORT, () => {
-      console.log("server is active");
-    });
-  }
+  
+  
 );
 // mw
 app.use(express.json());
