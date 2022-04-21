@@ -1,4 +1,3 @@
-require('dotenv').config({ path: '.env' });
 const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const mongoose = require("mongoose");
@@ -14,7 +13,7 @@ const router = require("./routes/router");
 const users = require("./models/userSchema");
 const articlesRouter = require("./routes/articles");
 const usersRouter = require('./routes/users');
-
+require('dotenv').config();
 
 // db
 mongoose.connect(
