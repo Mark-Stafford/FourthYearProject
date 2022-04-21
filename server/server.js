@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const routesHandler = require('./routes/addingRoutes');
 const express = require("express");
 const app = express();
+const path = require('path');
 
 const morgan = require('morgan');
 const cors = require('cors');
@@ -29,6 +30,10 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(cors());
 //hello h
+
+
+
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("build"));
   app.get("*", (req, res) => {
