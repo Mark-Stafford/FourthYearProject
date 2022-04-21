@@ -16,24 +16,7 @@ const usersRouter = require('./routes/users');
 require('dotenv').config();
 
 // db
-mongoose.connect(
-  process.env.MONGO_URL,
-  {
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) throw err;
-    console.log("db connected");
 
-    const PORT = 8000;
-    app.listen(process.env.PORT, () => {
-      console.log("server is active");
-    });
-  }
-);
 // mw
 app.use(express.json());
 // express.urlencoded({ extended: true });
