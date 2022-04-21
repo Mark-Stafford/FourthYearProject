@@ -16,7 +16,9 @@ const usersRouter = require('./routes/users');
 require('dotenv').config();
 
 // db
-
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 // mw
 app.use(express.json());
 // express.urlencoded({ extended: true });
