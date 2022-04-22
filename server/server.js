@@ -18,7 +18,7 @@ require('dotenv').config();
 
 // db
 mongoose.connect(
-  process.env.MONGO_URL,
+  process.env.MONGO_URI,
   {
 
     useCreateIndex: true,
