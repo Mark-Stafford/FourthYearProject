@@ -18,7 +18,7 @@ require('dotenv').config();
 
 // db
 mongoose.connect(
-  process.env.MONGO_URI,
+  process.env.MONGO_URL,
   {
 
     useCreateIndex: true,
@@ -27,10 +27,16 @@ mongoose.connect(
     useUnifiedTopology: true,
 
   },
-)
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  (err) => {
+  if (err) throw err;
+  console.log("db connected ");
+
+  const PORT = 8000;
+app.listen(PORT, () => {
+  console.log("Express server listening on port %d in %s mode");
 });
+  }
+);
 // mw
 app.use(express.json());
 // express.urlencoded({ extended: true });
@@ -66,6 +72,3 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-
-
