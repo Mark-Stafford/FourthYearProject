@@ -33,7 +33,7 @@ mongoose.connect(
   if (err) throw err;
   console.log("db connected ");
 
-  const PORT = 8000;
+  
 app.listen(process.env.PORT || 5000)
 });
   
