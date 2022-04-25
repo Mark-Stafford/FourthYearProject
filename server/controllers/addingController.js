@@ -10,6 +10,8 @@ const addingController = {
         const userImagerep = req.body.imagerep;
         const userCity = req.body.city;
         const userRooms = req.body.rooms;
+        const roomtype = req.body.roomtype
+        const country = req.body.country
       
         const user = req.body.user;
 
@@ -25,6 +27,8 @@ const addingController = {
           imagerep: userImagerep,
           city : userCity,
           rooms: userRooms,
+          roomtype: roomtype,
+          country: country,
           user : user
         
           

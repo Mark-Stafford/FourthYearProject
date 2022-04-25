@@ -16,8 +16,9 @@ import Map from './geolocated';
 const initialState = {
     description: "",
     city: "",
-    country: "",
     rooms: "",
+    roomtype: "",
+    country: "",
     
   };
 
@@ -26,7 +27,7 @@ function Adding() {
     const [data, setData] = useState(initialState);
     const loca = useContext(Map);
 
-    const { description, city, rooms } = data;
+    const { description, city, rooms, roomtype, country} = data;
 
 
     const inputFile = useRef(null);
@@ -50,7 +51,7 @@ function Adding() {
     const send = async (e) => {
       e.preventDefault();
       // check fields
-      if (isEmpty(description) || isEmpty(city) || isEmpty(rooms))
+      if (isEmpty(description) || isEmpty(city) || isEmpty(rooms) || isEmpty(roomtype) || isEmpty(country))
         return toast("Please fill in all fields.", {
           className: "toast-failed",
           bodyClassName: "toast-failed",
@@ -63,6 +64,8 @@ function Adding() {
           description,
           city,
           rooms,
+          roomtype,
+          country,
           user: localStorage.getItem("currentUser")
           
         });
@@ -114,7 +117,7 @@ function Adding() {
       Array.from(document.querySelectorAll("input")).forEach(
         (input) => (input.value = "")
       );
-      setData({ ...data, description: "", city: "" , rooms: ""});
+      setData({ ...data, description: "", city: "" , rooms: "", roomtype: "", country: ""});
     };
   
     return (
@@ -161,6 +164,20 @@ function Adding() {
             name="rooms"
             handleChange={handleChange}
           />
+          <Input
+            type="text"
+            text="Roomtype"
+            name="roomtype"
+            handleChange={handleChange}
+          />
+
+<Input
+            type="text"
+            text="Country"
+            name="country"
+            handleChange={handleChange}
+          />
+
 
 
 

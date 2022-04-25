@@ -11,6 +11,8 @@ const addingSchema = new Schema({
   
       city:  {type:String, required:true},
       rooms:  {type:String, required:true},
+      roomtype: {type:String, required:true},
+      country: {type:String, required:true},
       user: {type:Schema.Types.ObjectId, ref:'users'}
     
 

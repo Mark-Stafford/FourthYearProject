@@ -80,6 +80,9 @@ const Houses = (props) => {
 
           <th>Description</th>
           <th>City </th>
+          <th>Rooms</th>
+          <th>RoomType</th>
+          <th> Country</th>
           <th>Image</th>
 
         </tr>
@@ -90,9 +93,13 @@ const Houses = (props) => {
         <tr>
 
         <td>{item.user}</td>
-        <br></br>
+        
         <td>{item.description}</td>
           <td>{item.city} </td>
+          <td>{item.rooms} </td>
+          <td>{item.roomtype} </td>
+          <td>{item.country} </td>
+
           
           <td><a href={item.imagerep} target="_parent">
         
