@@ -34,11 +34,10 @@ mongoose.connect(
   console.log("db connected ");
 
   const PORT = 8000;
-app.listen(PORT, () => {
-  console.log("Express server listening on port %d in %s mode");
+app.listen(process.env.PORT || 5000)
 });
-  }
-);
+  
+
 // mw
 app.use(express.json());
 // express.urlencoded({ extended: true });
