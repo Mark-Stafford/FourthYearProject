@@ -1,21 +1,15 @@
 body {
-  background: #e6ece9;
+  background: #1d1927;
 }
 
 .profilelayout {
-  background: #ffffff;
+  background: #1d1927;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
 }
 
-.sidee {
-  position: absolute;
-  top: 10%;
-  right: 100%;
-  
-}
 .profilelayout_sidebar {
   display: none;
 }

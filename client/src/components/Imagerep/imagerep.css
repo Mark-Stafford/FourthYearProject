@@ -1,6 +1,9 @@
 .imagerep img {
-  width: 400px;
-  height: 200px;
+  width: 600px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
   border-color: black;
 }
-/*# sourceMappingURL=avatar.css.map */
+/*# sourceMappingURL=imagerep.css.map */

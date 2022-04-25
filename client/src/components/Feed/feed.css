@@ -9,11 +9,6 @@
 .feed p {
   font-weight: 300;
   color: #99979e;
-  
-}
-
-p.text{
-  font-size: 150%;
 }
 
 .feed_date {
@@ -47,5 +42,9 @@ p.text{
 
 .feed_content p {
   font-size: 0.8rem;
+}
+
+.feed p.text {
+  font-size: 150%;
 }
 /*# sourceMappingURL=feed.css.map */

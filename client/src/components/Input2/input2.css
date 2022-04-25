@@ -10,7 +10,7 @@
 .input label input {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-  background-color: white;
+  background-color: #544f5f;
   padding: 1em;
   border-radius: 5px;
   width: 300px;
@@ -39,14 +39,14 @@
 }
 
 .input label input:focus {
-  border: 2px solid #000;
+  border: 2px solid #f96a8b;
 }
 
 .input label input:focus + span {
   top: -15px;
   font-size: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#fbc02d), to(#000));
-  background: linear-gradient(to right, #fbc02d, #000);
+  background: -webkit-gradient(linear, left top, right top, from(yellow), to(red));
+  background: linear-gradient(to right, yellow, red);
   border-radius: 4px;
   padding: 0 5px;
   color: #fff;
@@ -64,12 +64,12 @@
 }
 
 .toast-failed {
-  background: #f96a8b !important;
+  background: yellow !important;
   color: #fff;
 }
 
 .toast-success {
-  background: #009688 !important;
+  background: green !important;
   color: #fff;
 }
 
@@ -82,4 +82,4 @@ input[type="text"]:disabled {
     width: 370px;
   }
 }
-/*# sourceMappingURL=input.css.map */
+/*# sourceMappingURL=input2.css.map */
