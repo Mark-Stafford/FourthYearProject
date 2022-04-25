@@ -1,5 +1,7 @@
 const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
+const userRoutes2 = require("./routes/userRoutes");
+const uploadRoutes2 = require("./routes/uploadRoutes");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const routesHandler = require('./routes/addingRoutes');
@@ -18,7 +20,7 @@ require('dotenv').config();
 
 // db
 mongoose.connect(
-  process.env.MONGO_URI,
+  process.env.MONGO_URL,
   {
 
     useCreateIndex: true,
@@ -62,6 +64,9 @@ app.use(userRoutes);
 app.use(uploadRoutes);
 app.use('/', routesHandler);
 app.use('/users', usersRouter);
+//2
+app.use(userRoutes2);
+app.use(uploadRoutes2);
 
 
 

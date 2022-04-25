@@ -4,6 +4,11 @@ import './Houses.css';
 import axios from "axios";
 import { toast } from "react-toastify";
 import Appbar from '../../components/Appbar/Appbar';
+import PayPal from "../../components/PayPal";
+import { Link } from 'react-router-dom';
+
+
+
 
 
 const Houses = (props) => {
@@ -12,11 +17,14 @@ const Houses = (props) => {
   }, []);
 
   const [items, setItems] = useState([]);
+  const [checkout, setCheckOut] = useState(false);
 
   
   const handleChange = (e) => {
     setItems({ ...items, [e.target.name]: e.target.value });
   };
+
+  
 
 
   const deleteItems = async (e) => {
@@ -95,10 +103,31 @@ const Houses = (props) => {
           onClick={console.log('hey')}
         >
           Photo <i className='far fa-play-circle' />
+          
         </button>
         </a> </td>
           
-        </tr>
+        
+
+        
+      {checkout ? (
+        <PayPal />
+        
+        
+      ) : (
+        <button
+          onClick={() => {
+            setCheckOut(true);
+          }}
+        >
+           
+           
+          Pay Deposit 
+        </button>
+         
+      )}
+       <Link to = "/pal"> </Link>
+    </tr>
   </>
   ))
 }

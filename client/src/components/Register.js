@@ -14,7 +14,7 @@ const Register = () => {
         age: "",
         mobile: "",
         work: "",
-        add: "",
+        add: "",//
         desc: ""
     })
 
